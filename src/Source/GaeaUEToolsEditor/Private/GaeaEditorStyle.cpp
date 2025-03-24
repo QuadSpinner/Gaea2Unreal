@@ -43,8 +43,8 @@ void FGaeaEditorStyle::Initialize()
 	else
 	{
 		// Plugin not found
-		UE_LOG(LogTemp, Error, TEXT("GaeaUnrealTools plugin not found"));
-	}
+		UE_LOG(LogTemp, Error, TEXT("GaeaUnrealTools icon path not found. This is likely caused by the plugin being installed in an incorrect location or folder name. Please see https://gaea.app/uedocs for exact instructions for the file path."));
+	}	
 	
  
 	// Register the style set
