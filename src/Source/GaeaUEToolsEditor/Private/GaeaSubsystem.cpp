@@ -35,6 +35,7 @@
 #include "Misc/PackageName.h"
 #include "LandscapeInfo.h"
 #include "Editor.h"
+#include "Materials/Material.h"
 
 
 

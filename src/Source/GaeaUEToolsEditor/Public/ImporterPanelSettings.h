@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Materials/MaterialInterface.h"
 #include "ImporterPanelSettings.generated.h"
 
 /**

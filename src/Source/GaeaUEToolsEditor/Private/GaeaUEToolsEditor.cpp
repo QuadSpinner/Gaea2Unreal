@@ -7,6 +7,7 @@
 #include "Subsystems/EditorActorSubsystem.h"
 #include "GaeaLandscapeComponent.h"
 #include "Landscape.h"
+#include "ToolMenus.h"
 
 
 

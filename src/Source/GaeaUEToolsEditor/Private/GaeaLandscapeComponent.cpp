@@ -3,6 +3,8 @@
 
 #include "GaeaLandscapeComponent.h"
 
+#include "Engine.h"
+
 // Sets default values for this component's properties
 UGaeaLandscapeComponent::UGaeaLandscapeComponent()
 {

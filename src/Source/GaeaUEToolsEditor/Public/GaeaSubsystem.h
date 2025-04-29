@@ -12,6 +12,7 @@
 #include "LandscapeImportHelper.h"
 #include "LandscapeTiledImage.h"
 #include "Landscape.h"
+#include "IDetailsView.h"
 #include "GaeaSubsystem.generated.h"
 
 /**
