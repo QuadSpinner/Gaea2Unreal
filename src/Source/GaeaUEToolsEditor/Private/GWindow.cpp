@@ -4,6 +4,9 @@
 #include "GWindow.h"
 #include "GaeaSubsystem.h"
 #include "WorldPartition/WorldPartitionSubsystem.h"
+#include "PropertyEditorModule.h"
+#include "Widgets/Input/SButton.h"
+#include "Widgets/Layout/SScrollBox.h"
 
 SMCWindow::SMCWindow()
 {
