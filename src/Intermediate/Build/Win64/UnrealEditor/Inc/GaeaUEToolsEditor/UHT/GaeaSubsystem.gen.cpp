@@ -128,9 +128,13 @@ struct Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "//Creates a landscape actor from our panel settings.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Creates a landscape actor from our panel settings." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Settings;
@@ -233,9 +237,13 @@ struct Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Get instance of the Gaea Subsystem\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Get instance of the Gaea Subsystem" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
@@ -436,9 +444,13 @@ struct Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Open import dialog for heightmap file types. Will set a path for heightmap and json files.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Open import dialog for heightmap file types. Will set a path for heightmap and json files." },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_Heightmap;
@@ -618,9 +630,13 @@ struct Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Spawn the Gaea Landscape Creator Window\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Spawn the Gaea Landscape Creator Window" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
@@ -680,9 +696,13 @@ struct Z_Construct_UClass_UGaeaSubsystem_Statics
 		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefaultDialogPath_MetaData[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "/*UPROPERTY()\n\x09UGMCSettings* PanelSettings = nullptr;*/" },
+#endif
 		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "UPROPERTY()\n       UGMCSettings* PanelSettings = nullptr;" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ImporterSettings;
@@ -690,17 +710,17 @@ struct Z_Construct_UClass_UGaeaSubsystem_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor, "CreateLandscapeActor" }, // 750424786
+		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor, "CreateLandscapeActor" }, // 2480200426
 		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson, "CreateStructFromJson" }, // 1613792579
-		{ &Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem, "GetGaeaSubsystem" }, // 128476306
+		{ &Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem, "GetGaeaSubsystem" }, // 3537221586
 		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscape, "GetLandscape" }, // 4283000196
 		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames, "GetLandscapeLayerBlendNames" }, // 3254978093
 		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes, "GetLandscapeLayerBlendNodes" }, // 687975465
-		{ &Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap, "ImportHeightmap" }, // 1734609087
+		{ &Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap, "ImportHeightmap" }, // 1001200721
 		{ &Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile, "ReadStringFromFile" }, // 2953167482
 		{ &Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain, "ReimportGaeaTerrain" }, // 2614075156
 		{ &Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain, "ReimportGaeaWPTerrain" }, // 3701868786
-		{ &Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow, "SpawnGImporterWindow" }, // 2719854119
+		{ &Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow, "SpawnGImporterWindow" }, // 1860571948
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -753,18 +773,18 @@ UGaeaSubsystem::~UGaeaSubsystem() {}
 // End Class UGaeaSubsystem
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics
+struct Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FGaeaJson::StaticStruct, Z_Construct_UScriptStruct_FGaeaJson_Statics::NewStructOps, TEXT("GaeaJson"), &Z_Registration_Info_UScriptStruct_GaeaJson, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaJson), 568454402U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UGaeaSubsystem, UGaeaSubsystem::StaticClass, TEXT("UGaeaSubsystem"), &Z_Registration_Info_UClass_UGaeaSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaeaSubsystem), 3708554181U) },
+		{ Z_Construct_UClass_UGaeaSubsystem, UGaeaSubsystem::StaticClass, TEXT("UGaeaSubsystem"), &Z_Registration_Info_UClass_UGaeaSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaeaSubsystem), 1106907384U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_4216918434(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ScriptStructInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_3911950584(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

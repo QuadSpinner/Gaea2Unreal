@@ -39,7 +39,9 @@ struct Z_Construct_UEnum_GaeaUEToolsEditor_ELandscapeBlendLayersType_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
+#endif
 		{ "LB_AlphaBlends.Comment", "/**\n * \n */" },
 		{ "LB_AlphaBlends.Name", "ELandscapeBlendLayersType::LB_AlphaBlends" },
 		{ "LB_HeightBlends.Comment", "/**\n * \n */" },
@@ -101,33 +103,53 @@ struct Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InstancedMaterial_MetaData[] = {
 		{ "Category", "Gaea" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Material to pull textures from. Used with MS materials, mostly.\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GMCSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Material to pull textures from. Used with MS materials, mostly." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaterialFunctionBase_MetaData[] = {
 		{ "Category", "Gaea" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Function to create \"instanced\" layer functions from to inject into the landscape master material\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GMCSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Function to create \"instanced\" layer functions from to inject into the landscape master material" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LayerName_MetaData[] = {
 		{ "Category", "Gaea" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Sets the landscape layer name and layer function name\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GMCSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Sets the landscape layer name and layer function name" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LayerGrouping_MetaData[] = {
 		{ "Category", "Gaea" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Sets the parameter grouping within the function layer\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GMCSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Sets the parameter grouping within the function layer" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LandscapeLayerType_MetaData[] = {
 		{ "Category", "Gaea" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Sets the landscape layer blend type\n" },
+#endif
 		{ "ModuleRelativePath", "Public/GMCSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Sets the landscape layer blend type" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InstancedMaterial;
@@ -148,7 +170,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FGaeaLa
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_LayerName = { "LayerName", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGaeaLandscapeSetting, LayerName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LayerName_MetaData), NewProp_LayerName_MetaData) };
 const UECodeGen_Private::FNamePropertyParams Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_LayerGrouping = { "LayerGrouping", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGaeaLandscapeSetting, LayerGrouping), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LayerGrouping_MetaData), NewProp_LayerGrouping_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_LandscapeLayerType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_LandscapeLayerType = { "LandscapeLayerType", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGaeaLandscapeSetting, LandscapeLayerType), Z_Construct_UEnum_GaeaUEToolsEditor_ELandscapeBlendLayersType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeLayerType_MetaData), NewProp_LandscapeLayerType_MetaData) }; // 114690888
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_LandscapeLayerType = { "LandscapeLayerType", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FGaeaLandscapeSetting, LandscapeLayerType), Z_Construct_UEnum_GaeaUEToolsEditor_ELandscapeBlendLayersType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeLayerType_MetaData), NewProp_LandscapeLayerType_MetaData) }; // 270358064
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_InstancedMaterial,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewProp_MaterialFunctionBase,
@@ -223,8 +245,8 @@ struct Z_Construct_UClass_UGMCSettings_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings_Inner = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGaeaLandscapeSetting, METADATA_PARAMS(0, nullptr) }; // 2831246157
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, LandscapeLayerSettings), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeLayerSettings_MetaData), NewProp_LandscapeLayerSettings_MetaData) }; // 2831246157
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings_Inner = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGaeaLandscapeSetting, METADATA_PARAMS(0, nullptr) }; // 1874215395
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, LandscapeLayerSettings), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeLayerSettings_MetaData), NewProp_LandscapeLayerSettings_MetaData) }; // 1874215395
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_ContentBrowserPath = { "ContentBrowserPath", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, ContentBrowserPath), Z_Construct_UScriptStruct_FDirectoryPath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ContentBrowserPath_MetaData), NewProp_ContentBrowserPath_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeMaterialName = { "LandscapeMaterialName", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, LandscapeMaterialName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeMaterialName_MetaData), NewProp_LandscapeMaterialName_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGMCSettings_Statics::PropPointers[] = {
@@ -270,21 +292,21 @@ DEFINE_VTABLE_PTR_HELPER_CTOR(UGMCSettings);
 // End Class UGMCSettings
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics
+struct Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ ELandscapeBlendLayersType_StaticEnum, TEXT("ELandscapeBlendLayersType"), &Z_Registration_Info_UEnum_ELandscapeBlendLayersType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 114690888U) },
+		{ ELandscapeBlendLayersType_StaticEnum, TEXT("ELandscapeBlendLayersType"), &Z_Registration_Info_UEnum_ELandscapeBlendLayersType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 270358064U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FGaeaLandscapeSetting::StaticStruct, Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewStructOps, TEXT("GaeaLandscapeSetting"), &Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaLandscapeSetting), 2831246157U) },
+		{ FGaeaLandscapeSetting::StaticStruct, Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewStructOps, TEXT("GaeaLandscapeSetting"), &Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaLandscapeSetting), 1874215395U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UGMCSettings, UGMCSettings::StaticClass, TEXT("UGMCSettings"), &Z_Registration_Info_UClass_UGMCSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGMCSettings), 1765185091U) },
+		{ Z_Construct_UClass_UGMCSettings, UGMCSettings::StaticClass, TEXT("UGMCSettings"), &Z_Registration_Info_UClass_UGMCSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGMCSettings), 3016050710U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_2871232640(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::EnumInfo));
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_3726398560(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

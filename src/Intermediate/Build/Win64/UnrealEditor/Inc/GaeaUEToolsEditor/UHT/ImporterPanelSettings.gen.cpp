@@ -85,7 +85,9 @@ struct Z_Construct_UClass_UImporterPanelSettings_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "/**\n * \n */" },
+#endif
 		{ "IncludePath", "ImporterPanelSettings.h" },
 		{ "IsBlueprintBase", "false" },
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
@@ -102,10 +104,14 @@ struct Z_Construct_UClass_UImporterPanelSettings_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeightmapFileNames_MetaData[] = {
 		{ "Category", "Filepaths" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "//Reorder these to match the desired landscape layer. This must always be less than the amount of layers provided by the landscape material.\n" },
+#endif
 		{ "DisplayName", "Weightmap Filenames" },
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Reorder these to match the desired landscape layer. This must always be less than the amount of layers provided by the landscape material." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeightmapFilePaths_MetaData[] = {
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
@@ -131,19 +137,27 @@ struct Z_Construct_UClass_UImporterPanelSettings_Statics
 		{ "Category", "Landscape Actor Settings|World Partition" },
 		{ "ClampMax", "16" },
 		{ "ClampMin", "1" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "// Used only if the level has world partition support.\n" },
+#endif
 		{ "EditCondition", "bIsWorldPartition" },
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Used only if the level has world partition support." },
+#endif
 		{ "UIMax", "16" },
 		{ "UIMin", "1" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LandscapeMaterial_MetaData[] = {
 		{ "Category", "Rendering" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "//Must be set to automatically setup layer weightmaps.\n" },
+#endif
 		{ "DisplayName", "Landscape Material" },
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Must be set to automatically setup layer weightmaps." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LandscapeMaterialLayerNames_MetaData[] = {
 		{ "Category", "Rendering" },
@@ -153,11 +167,15 @@ struct Z_Construct_UClass_UImporterPanelSettings_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LayerInfoFolder_MetaData[] = {
 		{ "Category", "Rendering" },
+#if !UE_BUILD_SHIPPING
 		{ "Comment", "//Where to create layer info objects.\n" },
+#endif
 		{ "ContentDir", "" },
 		{ "DisplayName", "Layer Info Folder" },
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
+#if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Where to create layer info objects." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Location_MetaData[] = {
 		{ "Category", "Transform" },
@@ -309,14 +327,14 @@ DEFINE_VTABLE_PTR_HELPER_CTOR(UImporterPanelSettings);
 // End Class UImporterPanelSettings
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics
+struct Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UImporterPanelSettings, UImporterPanelSettings::StaticClass, TEXT("UImporterPanelSettings"), &Z_Registration_Info_UClass_UImporterPanelSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UImporterPanelSettings), 2898716088U) },
+		{ Z_Construct_UClass_UImporterPanelSettings, UImporterPanelSettings::StaticClass, TEXT("UImporterPanelSettings"), &Z_Registration_Info_UClass_UImporterPanelSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UImporterPanelSettings), 3726141795U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_3402212712(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_3440723735(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

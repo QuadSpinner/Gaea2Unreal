@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "GaeaEditorStyle.h"
-
+#include "GaeaUEToolsEditor.h"
 #include "Interfaces/IPluginManager.h"
 #include "Styling/CoreStyle.h"
 #include "Styling/SlateStyleRegistry.h"
@@ -26,9 +26,16 @@ void FGaeaEditorStyle::Initialize()
 	// Construct the relative path to the image file
 	const FString IconPath = ContentDir + "/Icons/ImporterIcon.png";*/
 	
-	FString PluginPath = FPaths::Combine(FPaths::ProjectPluginsDir(), TEXT("GaeaUnrealTools"));
+	FString PluginPath = FPaths::Combine(FPaths::ProjectPluginsDir(), GaeaPluginFolderName);
 	if (!FPaths::DirectoryExists(PluginPath))
-		PluginPath = FPaths::Combine(FPaths::EnginePluginsDir(), TEXT("GaeaUnrealTools"));
+	{	// Check if the plugin is in the Engines Plugins root directory
+		PluginPath = FPaths::Combine(FPaths::EnginePluginsDir(), GaeaPluginFolderName);
+		if (!FPaths::DirectoryExists(PluginPath))
+		{	// Check if the plugin is in the Engines Plugins Marketplace root directory
+			const FString MarketplacePath = FPaths::Combine(FPaths::EnginePluginsDir(), MarketplaceFolderName);
+			PluginPath = FPaths::Combine(MarketplacePath, GaeaPluginFolderName);
+		}
+	}
 
 	if (FPaths::DirectoryExists(PluginPath))
 	{
@@ -43,7 +50,7 @@ void FGaeaEditorStyle::Initialize()
 	else
 	{
 		// Plugin not found
-		UE_LOG(LogTemp, Error, TEXT("GaeaUnrealTools icon path not found. This is likely caused by the plugin being installed in an incorrect location or folder name. Please see https://gaea.app/uedocs for exact instructions for the file path."));
+		UE_LOG(LogTemp, Error, TEXT("%s icon path not found. This is likely caused by the plugin being installed in an incorrect location or folder name. Please see https://gaea.app/uedocs for exact instructions for the file path."), *GaeaPluginFolderName);
 	}	
 	
  

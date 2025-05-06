@@ -14,14 +14,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define GAEAUETOOLSEDITOR_GMCSettings_generated_h
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_23_GENERATED_BODY \
+#define FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_23_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics; \
 	static class UScriptStruct* StaticStruct();
 
 
 template<> GAEAUETOOLSEDITOR_API UScriptStruct* StaticStruct<struct FGaeaLandscapeSetting>();
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_INCLASS_NO_PURE_DECLS \
+#define FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUGMCSettings(); \
 	friend struct Z_Construct_UClass_UGMCSettings_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(UGMCSettings)
 
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_ENHANCED_CONSTRUCTORS \
+#define FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	UGMCSettings(UGMCSettings&&); \
@@ -41,12 +41,12 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UGMCSettings)
 
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_47_PROLOG
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_GENERATED_BODY \
+#define FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_47_PROLOG
+#define FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_INCLASS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_ENHANCED_CONSTRUCTORS \
+	FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_INCLASS_NO_PURE_DECLS \
+	FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h_50_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -54,7 +54,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> GAEAUETOOLSEDITOR_API UClass* StaticClass<class UGMCSettings>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h
+#define CURRENT_FILE_ID FID_PeacefulLife_Plugins_Gaea2Unreal_Source_GaeaUEToolsEditor_Public_GMCSettings_h
 
 
 #define FOREACH_ENUM_ELANDSCAPEBLENDLAYERSTYPE(op) \

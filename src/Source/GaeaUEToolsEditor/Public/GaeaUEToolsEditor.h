@@ -3,9 +3,9 @@
 //#include "CoreMinimal.h"
 #include "Modules/ModuleInterface.h"
 #include "Modules/ModuleManager.h"
-#include "GaeaSubsystem.h"
 
-
+static FString GaeaPluginFolderName {"GaeaUnrealTools"};
+static FString MarketplaceFolderName {"Marketplace"};
 
 class FToolBarBuilder;
 class FMenuBuilder;
