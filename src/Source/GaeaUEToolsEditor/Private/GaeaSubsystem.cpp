@@ -494,7 +494,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 										if (Landscape->bCanHaveLayersContent)
 										{
 											const FLandscapeLayer* BaseLayer = Landscape->GetLayerConst(0);
-											FGuid ID = BaseLayer->Guid;
+											FGuid ID = BaseLayer->Guid_DEPRECATED;
 											LandscapeEdit.SetEditLayer(ID);
 
 											LandscapeEdit.SetHeightData(
