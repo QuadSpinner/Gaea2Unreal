@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Materials/MaterialInterface.h"
 #include "ImporterPanelSettings.generated.h"
 
 /**
@@ -33,7 +34,7 @@ public:
 	UPROPERTY()
 	FString StoredPath;
 
-	UPROPERTY(EditAnywhere, Category="Landscape Actor Settings")
+	UPROPERTY()
 	bool EnableEditLayers = true;
 
 	UPROPERTY(EditAnywhere, DisplayName="Flip Y Axis", Category="Landscape Actor Settings")

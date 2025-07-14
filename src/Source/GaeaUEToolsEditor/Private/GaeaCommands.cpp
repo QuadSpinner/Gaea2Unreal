@@ -9,6 +9,7 @@
 void FGaeaCommands::RegisterCommands()
 {
 	UI_COMMAND(OpenImporter, "Open Importer", "Opens the Landscape Importer Window", EUserInterfaceActionType::Button, FInputChord(EKeys::P, EModifierKey::Control | EModifierKey::Alt));
+	UI_COMMAND(DeleteSelectedWPLandscape, "Delete Selected WP Landscape", "Deletes a World Partitioned Landscape and its proxies", EUserInterfaceActionType::None, FInputChord(EKeys::V, EModifierKey::Control));
 }
 
 

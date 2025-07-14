@@ -7,8 +7,10 @@
 #include "Subsystems/EditorActorSubsystem.h"
 #include "GaeaLandscapeComponent.h"
 #include "Landscape.h"
+#include "ToolMenus.h"
+#include "WorldPartition/WorldPartitionSubsystem.h"
 
-
+DEFINE_LOG_CATEGORY(GaeaUETools);
 
 #define LOCTEXT_NAMESPACE "FGaeaUEToolsEditorModule"
 
@@ -18,10 +20,12 @@ void FGaeaUEToolsEditorModule::StartupModule()
 	FGaeaCommands::Register();
 	/*UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(
 			this, &FGaeaUEToolsEditorModule::RegisterMCWindow));*/ // Register Material Creator Callback
-
 	
 	UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(
 			this, &FGaeaUEToolsEditorModule::RegisterGaeaActorMenu));
+
+	/*UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(
+			this, &FGaeaUEToolsEditorModule::RegisterLandscapeActorMenu));*/
 	
 	
 	UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(
@@ -45,7 +49,6 @@ void FGaeaUEToolsEditorModule::StartupModule()
 			
 		})
 	);
-	
 	
 }
 
@@ -171,10 +174,11 @@ void FGaeaUEToolsEditorModule::RegisterGaeaActorMenu()
 						"GaeaLandscapeSubMenu", 
 						FText::FromString("Gaea Landscape Actions"), 
 						FText::FromString("Contains various actions for landscapes imported from Gaea"), 
-						FNewMenuDelegate::CreateRaw(this, &FGaeaUEToolsEditorModule::RefreshGaeaLandscape),
+						FNewMenuDelegate::CreateRaw(this, &FGaeaUEToolsEditorModule::GaeaActorActions),
 						false, 
 						FSlateIcon(FGaeaEditorStyle::GetStyleSetName(), TEXT("ImporterIcon"))
 	);
+					
 				}
 			}
 		}
@@ -183,7 +187,7 @@ void FGaeaUEToolsEditorModule::RegisterGaeaActorMenu()
 	
 }
 
-void FGaeaUEToolsEditorModule::RefreshGaeaLandscape(FMenuBuilder& MenuBuilder)
+void FGaeaUEToolsEditorModule::GaeaActorActions(FMenuBuilder& MenuBuilder)
 {
 	FUIAction ExecuteReimportGaeaLandscape(
 	FExecuteAction::CreateLambda([]() {
@@ -212,6 +216,46 @@ void FGaeaUEToolsEditorModule::RefreshGaeaLandscape(FMenuBuilder& MenuBuilder)
 		ExecuteReimportGaeaLandscape
 	);
 }
+
+void FGaeaUEToolsEditorModule::RegisterLandscapeActorMenu()
+{
+	FToolMenuOwnerScoped OwnerScoped(this);
+
+	UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorSceneOutliner.ContextMenu");
+
+	FToolMenuSection& Section = Menu->FindOrAddSection("ActorOptions");
+
+	Section.AddDynamicEntry("DeleteWPLandscapeEntry", FNewToolMenuSectionDelegate::CreateLambda([](FToolMenuSection& Section)
+	{
+		FToolMenuEntry Entry = FToolMenuEntry::InitMenuEntry(
+			"DeleteWPLandscapeEntry",
+			FText::FromString("Delete World Partitioned Landscape"),
+			FText::FromString("Deletes selected landscape and its proxies."),
+			FSlateIcon(FGaeaEditorStyle::GetStyleSetName(), "ImporterIcon"),
+			FUIAction(
+				FExecuteAction::CreateLambda([]()
+				{
+					if (UGaeaSubsystem* Subsystem = UGaeaSubsystem::GetGaeaSubsystem())
+					{
+						//Subsystem->DeleteWPLandscape();
+					}
+				}),
+				FCanExecuteAction::CreateLambda([]()
+				{
+					UEditorActorSubsystem* ActorSubsystem = GEditor->GetEditorSubsystem<UEditorActorSubsystem>();
+					const TArray<AActor*>& Selected = ActorSubsystem->GetSelectedLevelActors();
+					const UWorld* World = GEditor->GetEditorWorldContext().World();
+					const bool bWP = World->IsPartitionedWorld();
+					return Selected.Num() > 0 && Selected[0]->IsA<ALandscape>() && bWP;
+				})
+			)
+		);
+
+		Entry.InsertPosition = FToolMenuInsert("EditSubMenu", EToolMenuInsertType::After);
+		Section.AddEntry(Entry);
+	}));
+}
+
 
 #undef LOCTEXT_NAMESPACE
     

@@ -5,11 +5,13 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "GaeaUEToolsEditor/Public/ImporterPanelSettings.h"
+#include "ImporterPanelSettings.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeImporterPanelSettings() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FDirectoryPath();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FIntPoint();
@@ -19,9 +21,9 @@ ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UImporterPanelSettings();
 GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UImporterPanelSettings_NoRegister();
 UPackage* Z_Construct_UPackage__Script_GaeaUEToolsEditor();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UImporterPanelSettings Function IsLandscapeMaterialLayerNamesNotEmpty
+// ********** Begin Class UImporterPanelSettings Function IsLandscapeMaterialLayerNamesNotEmpty ****
 struct Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics
 {
 	struct ImporterPanelSettings_eventIsLandscapeMaterialLayerNamesNotEmpty_Parms
@@ -47,7 +49,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UImpor
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UImporterPanelSettings, nullptr, "IsLandscapeMaterialLayerNamesNotEmpty", nullptr, nullptr, Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::PropPointers), sizeof(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::ImporterPanelSettings_eventIsLandscapeMaterialLayerNamesNotEmpty_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::Function_MetaDataParams), Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UImporterPanelSettings, nullptr, "IsLandscapeMaterialLayerNamesNotEmpty", Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::PropPointers), sizeof(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::ImporterPanelSettings_eventIsLandscapeMaterialLayerNamesNotEmpty_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::Function_MetaDataParams), Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty_Statics::ImporterPanelSettings_eventIsLandscapeMaterialLayerNamesNotEmpty_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty()
 {
@@ -65,9 +67,9 @@ DEFINE_FUNCTION(UImporterPanelSettings::execIsLandscapeMaterialLayerNamesNotEmpt
 	*(bool*)Z_Param__Result=P_THIS->IsLandscapeMaterialLayerNamesNotEmpty();
 	P_NATIVE_END;
 }
-// End Class UImporterPanelSettings Function IsLandscapeMaterialLayerNamesNotEmpty
+// ********** End Class UImporterPanelSettings Function IsLandscapeMaterialLayerNamesNotEmpty ******
 
-// Begin Class UImporterPanelSettings
+// ********** Begin Class UImporterPanelSettings ***************************************************
 void UImporterPanelSettings::StaticRegisterNativesUImporterPanelSettings()
 {
 	UClass* Class = UImporterPanelSettings::StaticClass();
@@ -76,10 +78,34 @@ void UImporterPanelSettings::StaticRegisterNativesUImporterPanelSettings()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UImporterPanelSettings);
+FClassRegistrationInfo Z_Registration_Info_UClass_UImporterPanelSettings;
+UClass* UImporterPanelSettings::GetPrivateStaticClass()
+{
+	using TClass = UImporterPanelSettings;
+	if (!Z_Registration_Info_UClass_UImporterPanelSettings.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			StaticPackage(),
+			TEXT("ImporterPanelSettings"),
+			Z_Registration_Info_UClass_UImporterPanelSettings.InnerSingleton,
+			StaticRegisterNativesUImporterPanelSettings,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UImporterPanelSettings.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UImporterPanelSettings_NoRegister()
 {
-	return UImporterPanelSettings::StaticClass();
+	return UImporterPanelSettings::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UImporterPanelSettings_Statics
 {
@@ -114,7 +140,6 @@ struct Z_Construct_UClass_UImporterPanelSettings_Statics
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EnableEditLayers_MetaData[] = {
-		{ "Category", "Landscape Actor Settings" },
 		{ "ModuleRelativePath", "Public/ImporterPanelSettings.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FlipYAxis_MetaData[] = {
@@ -208,7 +233,7 @@ struct Z_Construct_UClass_UImporterPanelSettings_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty, "IsLandscapeMaterialLayerNamesNotEmpty" }, // 2570544585
+		{ &Z_Construct_UFunction_UImporterPanelSettings_IsLandscapeMaterialLayerNamesNotEmpty, "IsLandscapeMaterialLayerNamesNotEmpty" }, // 2178198309
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -227,7 +252,7 @@ void Z_Construct_UClass_UImporterPanelSettings_Statics::NewProp_EnableEditLayers
 {
 	((UImporterPanelSettings*)Obj)->EnableEditLayers = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UImporterPanelSettings_Statics::NewProp_EnableEditLayers = { "EnableEditLayers", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UImporterPanelSettings), &Z_Construct_UClass_UImporterPanelSettings_Statics::NewProp_EnableEditLayers_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EnableEditLayers_MetaData), NewProp_EnableEditLayers_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UImporterPanelSettings_Statics::NewProp_EnableEditLayers = { "EnableEditLayers", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UImporterPanelSettings), &Z_Construct_UClass_UImporterPanelSettings_Statics::NewProp_EnableEditLayers_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EnableEditLayers_MetaData), NewProp_EnableEditLayers_MetaData) };
 void Z_Construct_UClass_UImporterPanelSettings_Statics::NewProp_FlipYAxis_SetBit(void* Obj)
 {
 	((UImporterPanelSettings*)Obj)->FlipYAxis = 1;
@@ -301,23 +326,20 @@ UClass* Z_Construct_UClass_UImporterPanelSettings()
 	}
 	return Z_Registration_Info_UClass_UImporterPanelSettings.OuterSingleton;
 }
-template<> GAEAUETOOLSEDITOR_API UClass* StaticClass<UImporterPanelSettings>()
-{
-	return UImporterPanelSettings::StaticClass();
-}
 DEFINE_VTABLE_PTR_HELPER_CTOR(UImporterPanelSettings);
-// End Class UImporterPanelSettings
+// ********** End Class UImporterPanelSettings *****************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h__Script_GaeaUEToolsEditor_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UImporterPanelSettings, UImporterPanelSettings::StaticClass, TEXT("UImporterPanelSettings"), &Z_Registration_Info_UClass_UImporterPanelSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UImporterPanelSettings), 2898716088U) },
+		{ Z_Construct_UClass_UImporterPanelSettings, UImporterPanelSettings::StaticClass, TEXT("UImporterPanelSettings"), &Z_Registration_Info_UClass_UImporterPanelSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UImporterPanelSettings), 3070545377U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_3402212712(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h__Script_GaeaUEToolsEditor_1484926943(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h__Script_GaeaUEToolsEditor_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_ImporterPanelSettings_h__Script_GaeaUEToolsEditor_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

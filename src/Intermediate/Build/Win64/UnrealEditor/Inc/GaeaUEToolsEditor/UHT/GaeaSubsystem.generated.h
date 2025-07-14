@@ -5,30 +5,38 @@
 ===========================================================================*/
 
 // IWYU pragma: private, include "GaeaSubsystem.h"
+
+#ifdef GAEAUETOOLSEDITOR_GaeaSubsystem_generated_h
+#error "GaeaSubsystem.generated.h already included, missing '#pragma once' in GaeaSubsystem.h"
+#endif
+#define GAEAUETOOLSEDITOR_GaeaSubsystem_generated_h
+
 #include "UObject/ObjectMacros.h"
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 class ALandscape;
+class ALandscapeProxy;
 class UGaeaSubsystem;
 class UImporterPanelSettings;
 class ULandscapeInfo;
 class UMaterialExpressionLandscapeLayerBlend;
 class UMaterialInterface;
 struct FGaeaJson;
-#ifdef GAEAUETOOLSEDITOR_GaeaSubsystem_generated_h
-#error "GaeaSubsystem.generated.h already included, missing '#pragma once' in GaeaSubsystem.h"
-#endif
-#define GAEAUETOOLSEDITOR_GaeaSubsystem_generated_h
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_26_GENERATED_BODY \
+// ********** Begin ScriptStruct FGaeaJson *********************************************************
+#define FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_29_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FGaeaJson_Statics; \
 	GAEAUETOOLSEDITOR_API static class UScriptStruct* StaticStruct();
 
 
-template<> GAEAUETOOLSEDITOR_API UScriptStruct* StaticStruct<struct FGaeaJson>();
+struct FGaeaJson;
+// ********** End ScriptStruct FGaeaJson ***********************************************************
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+// ********** Begin Class UGaeaSubsystem ***********************************************************
+#define FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetLandscapeActorProxies); \
 	DECLARE_FUNCTION(execGetLandscapeLayerBlendNames); \
 	DECLARE_FUNCTION(execGetLandscapeLayerBlendNodes); \
 	DECLARE_FUNCTION(execCreateLandscapeActor); \
@@ -42,44 +50,47 @@ template<> GAEAUETOOLSEDITOR_API UScriptStruct* StaticStruct<struct FGaeaJson>()
 	DECLARE_FUNCTION(execGetGaeaSubsystem);
 
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_INCLASS_NO_PURE_DECLS \
+GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UGaeaSubsystem_NoRegister();
+
+#define FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUGaeaSubsystem(); \
 	friend struct Z_Construct_UClass_UGaeaSubsystem_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UGaeaSubsystem_NoRegister(); \
 public: \
-	DECLARE_CLASS(UGaeaSubsystem, UEditorSubsystem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/GaeaUEToolsEditor"), NO_API) \
+	DECLARE_CLASS2(UGaeaSubsystem, UEditorSubsystem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/GaeaUEToolsEditor"), Z_Construct_UClass_UGaeaSubsystem_NoRegister) \
 	DECLARE_SERIALIZER(UGaeaSubsystem)
 
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_ENHANCED_CONSTRUCTORS \
+#define FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UGaeaSubsystem(); \
-private: \
-	/** Private move- and copy-constructors, should never be used */ \
-	UGaeaSubsystem(UGaeaSubsystem&&); \
-	UGaeaSubsystem(const UGaeaSubsystem&); \
-public: \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	UGaeaSubsystem(UGaeaSubsystem&&) = delete; \
+	UGaeaSubsystem(const UGaeaSubsystem&) = delete; \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UGaeaSubsystem); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UGaeaSubsystem); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UGaeaSubsystem) \
 	NO_API virtual ~UGaeaSubsystem();
 
 
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_45_PROLOG
-#define FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_GENERATED_BODY \
+#define FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_PROLOG
+#define FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_INCLASS_NO_PURE_DECLS \
-	FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_48_ENHANCED_CONSTRUCTORS \
+	FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_INCLASS_NO_PURE_DECLS \
+	FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_51_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-template<> GAEAUETOOLSEDITOR_API UClass* StaticClass<class UGaeaSubsystem>();
+class UGaeaSubsystem;
+
+// ********** End Class UGaeaSubsystem *************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h
-
+#define CURRENT_FILE_ID FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

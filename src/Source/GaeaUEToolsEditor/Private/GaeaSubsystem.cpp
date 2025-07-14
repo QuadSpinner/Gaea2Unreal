@@ -35,13 +35,14 @@
 #include "Misc/PackageName.h"
 #include "LandscapeInfo.h"
 #include "Editor.h"
-
+#include "LandscapeEditLayer.h"
 
 
 #include "Materials/MaterialExpressionLandscapeLayerBlend.h"
+#include "WorldPartition/WorldPartition.h"
 
 
-DEFINE_LOG_CATEGORY_STATIC(LogGaeaSubsystem, Log, All);
+DEFINE_LOG_CATEGORY(GaeaSubsystem)
 
 #define LOCTEXT_NAMESPACE "GaeaSubsystem"
 
@@ -119,6 +120,7 @@ UGaeaSubsystem* UGaeaSubsystem::GetGaeaSubsystem()
 	
 }*/
 
+
 void UGaeaSubsystem::SpawnGImporterWindow()
 {
 	if(ImporterWindowValidator.IsValid()==false)
@@ -149,9 +151,8 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 	bool ReimportWeightmaps = false;
 	TArray<uint8> WeightOutData;
 	TArray<uint8> FinalWeightOutData;
-	
-	UEditorActorSubsystem* ActorSubsystem = GEditor->GetEditorSubsystem<UEditorActorSubsystem>(); // Get an instance of the Editor Actor Subsystem.
-	if (ActorSubsystem)
+
+	if (UEditorActorSubsystem* ActorSubsystem = GEditor->GetEditorSubsystem<UEditorActorSubsystem>())
 	{
 		const TArray<AActor*>& SelectedActors = ActorSubsystem->GetSelectedLevelActors(); // Use the subsystem instance to get references to selected actors.
 		UGaeaLandscapeComponent* GaeaComponent = SelectedActors[0]->FindComponentByClass<UGaeaLandscapeComponent>(); // Check for a Gaea Landscape Component.
@@ -172,7 +173,7 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 		
 			if(bStatus)
 			{
-				UE_LOG(LogTemp, Display, TEXT("ScaleX: %f, ScaleY: %f, Height: %f, Resolution: %d"), 
+				UE_LOG(GaeaSubsystem, Display, TEXT("ScaleX: %f, ScaleY: %f, Height: %f, Resolution: %d"), 
 			   GaeaDefinition.ScaleX, GaeaDefinition.ScaleY, GaeaDefinition.Height, GaeaDefinition.Resolution);
 				FVector LandscapeLocation = FVector(0,0,GaeaDefinition.Height*100/2);
 				FVector LandscapeScale = FVector(GaeaDefinition.ScaleX * 100 / GaeaDefinition.Resolution,GaeaDefinition.ScaleY * 100 / GaeaDefinition.Resolution,GaeaDefinition.Height * 100 / 512); // Apply scaling formula to our passed in scale variable from the ImporterPanelSettings
@@ -220,9 +221,9 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 				
 				if (EditLayers)
 				{
-					const FLandscapeLayer* BaseLayer = Landscape->GetLayerConst(0); //The old GetLayer() function has been deprecated. Use this to avoid nullptr crash.
-					FGuid ID = BaseLayer->Guid;
-					LandscapeEdit.SetEditLayer(ID);
+					// New setup for 5.6 to get the Guid of the base edit layer. Required for SetEditLayer and therefore SetHeight/Weight Data to function properly.
+					ULandscapeEditLayerBase* Layer = Landscape->GetEditLayer(0);
+					LandscapeEdit.SetEditLayer(Layer->GetGuid()); 
 				}
 				
 				
@@ -235,9 +236,7 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 					// Loop through all layers associated with the landscape and get the relevant layer objects.
 					for (const FLandscapeInfoLayerSettings& LayerSettings : LandscapeActorInfo->Layers)
 					{
-						ULandscapeLayerInfoObject* LayerInfoObject = LayerSettings.LayerInfoObj;
-						
-						if (LayerInfoObject)
+						if (ULandscapeLayerInfoObject* LayerInfoObject = LayerSettings.LayerInfoObj)
 						{
 							InfoObjects.Add(LayerInfoObject);
 							
@@ -248,7 +247,8 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 					{
 						if (InfoObjects[i])
 						{
-							Landscape->ClearLayer(i,nullptr,Clear_Weightmap); // Have to clear all layers, or SetAlphaData will accumulate or present with visual artifacting.
+							Landscape->ClearLayer(i,nullptr,Clear_Weightmap);
+							Landscape->ClearLayer(i, nullptr, Clear_Heightmap);// Have to clear all layers, or SetAlphaData will accumulate or present with visual artifacting.
 						}
 					}
 					
@@ -307,7 +307,7 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 							true, // Update bounds
 							true, // Update collision
 							true  // Generate mipmaps
-		);
+							);
 			
 						
 						Landscape->RequestLayersContentUpdateForceAll(ELandscapeLayerUpdateMode::Update_Heightmap_All);
@@ -360,8 +360,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
         	
 			if (Landscape)
 			{
-				UGaeaLandscapeComponent* GaeaComponent = Actor->FindComponentByClass<UGaeaLandscapeComponent>();
-				if (GaeaComponent)
+				if (UGaeaLandscapeComponent* GaeaComponent = Actor->FindComponentByClass<UGaeaLandscapeComponent>())
 				{
 					FString JsonPath = GaeaComponent->DefinitionFilepath.FilePath;
 					FString HeightPath = GaeaComponent->HeightmapFilepath.FilePath;
@@ -430,9 +429,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 									// Loop through all layers associated with the landscape and get the relevant layer objects.
 									for (const FLandscapeInfoLayerSettings& LayerSettings : LandscapeActorInfo->Layers)
 									{
-										ULandscapeLayerInfoObject* LayerInfoObject = LayerSettings.LayerInfoObj;
-        
-										if (LayerInfoObject)
+										if (ULandscapeLayerInfoObject* LayerInfoObject = LayerSettings.LayerInfoObj)
 										{
 											InfoObjects.Add(LayerInfoObject);
 										}
@@ -466,9 +463,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 									FIntRect ComponentsRect = Proxy->GetBoundingRect() + Proxy->LandscapeSectionOffset;
 									const int32 CompSizeX = ComponentsRect.Width() + 1;
 									const int32 CompSizeY = ComponentsRect.Height() + 1;
-
 									
-
 									// Define the region in FinalHeightData corresponding to this proxy
 									TArray<uint16> ProxyHeightData;
 									ProxyHeightData.SetNum(CompSizeX * CompSizeY);
@@ -493,10 +488,9 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 									{
 										if (Landscape->bCanHaveLayersContent)
 										{
-											const FLandscapeLayer* BaseLayer = Landscape->GetLayerConst(0);
-											FGuid ID = BaseLayer->Guid;
-											LandscapeEdit.SetEditLayer(ID);
-
+											ULandscapeEditLayerBase* Layer = Landscape->GetEditLayer(0);
+											LandscapeEdit.SetEditLayer(Layer->GetGuid()); 
+											
 											LandscapeEdit.SetHeightData(
 												ComponentsRect.Min.X, ComponentsRect.Min.Y,
 												ComponentsRect.Max.X, ComponentsRect.Max.Y,
@@ -510,15 +504,31 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 										}
 										else
 										{
-                                        	
-											FHeightmapAccessor<true> HeightmapAccessor(Proxy->GetLandscapeInfo());
-											HeightmapAccessor.SetData(
+											
+											LandscapeEdit.SetHeightData(
 												ComponentsRect.Min.X, ComponentsRect.Min.Y,
 												ComponentsRect.Max.X, ComponentsRect.Max.Y,
-												ProxyHeightData.GetData()
+												ProxyHeightData.GetData(),
+												CompSizeX, true, nullptr, nullptr, nullptr,
+												false, nullptr, nullptr,
+												true, true, true
 											);
+											
+											// Hack until I figure out how to fix normal seams at tile edges for non-edit layer WP reimport
+											 if (!Landscape->HasLayersContent())
+											 {
+											 	
+											 	Landscape->ToggleCanHaveLayersContent();
+											
+											 	FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([Landscape](float DeltaTime) -> bool
+											 	{
+											 	 Landscape->ToggleCanHaveLayersContent();
+											 		return false; 
+											 	}), 3.0f);
+											}
+											
 										}
-
+										
 										Proxy->SetActorScale3D(LandscapeScale);
 									}
 									else
@@ -530,7 +540,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 									}
 									
                                 	
-									if(Landscape->bCanHaveLayersContent)
+									if(Landscape->bCanHaveLayersContent && InfoObjects.Num() > 0)
 									{
 										TArray<uint8> FirstLayerData;
 										FirstLayerData.SetNum(CompSizeX * CompSizeY);
@@ -571,10 +581,9 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 												{
 													if (Landscape->bCanHaveLayersContent)
 													{
-														const FLandscapeLayer* BaseLayer = Landscape->GetLayerConst(0);
-														FGuid ID = BaseLayer->Guid;
-														LandscapeEdit.SetEditLayer(ID);
-
+														ULandscapeEditLayerBase* Layer = Landscape->GetEditLayer(0);
+														LandscapeEdit.SetEditLayer(Layer->GetGuid()); 
+														
 														LandscapeEdit.SetAlphaData(
 															InfoObjects[i], 
 															ComponentsRect.Min.X, ComponentsRect.Min.Y,
@@ -597,10 +606,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 									}
 									else
 									{
-										if (GEngine)
-										{
-											GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Weightmap reimport currently only works with edit layers."));
-										}
+										UE_LOG(GaeaSubsystem, Warning, TEXT("Weightmap reimport only supported via edit layer path."));
 									}
 									
 								}
@@ -611,6 +617,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 			}
 		}
 	}
+	
 }
 
 void UGaeaSubsystem::ImportHeightmap(FString& Heightmap, FString& JSON, FVector& Scale, FVector& Location, TArray<FString>& Weightmaps, FString& CachedPath)
@@ -664,7 +671,7 @@ void UGaeaSubsystem::ImportHeightmap(FString& Heightmap, FString& JSON, FVector&
 		if (FilesInDirectory.IsEmpty()) // Early exit if json isn't present.
 		{
 			JSON = TEXT("None");
-			UE_LOG(LogTemp, Log, TEXT("No json files found."));
+			UE_LOG(GaeaSubsystem, Log, TEXT("No json files found."));
 			return;
 		}
 		
@@ -684,7 +691,7 @@ void UGaeaSubsystem::ImportHeightmap(FString& Heightmap, FString& JSON, FVector&
 		if (!bDefinitionFound)
 		{
 			// If the flag is still false after the loop, no definition file was found
-			UE_LOG(LogTemp, Warning, TEXT("No Definition.json found."));
+			UE_LOG(GaeaSubsystem, Warning, TEXT("No Definition.json found."));
 			return;
 		}
 	}
@@ -692,7 +699,7 @@ void UGaeaSubsystem::ImportHeightmap(FString& Heightmap, FString& JSON, FVector&
 	else
 	{
 		// No file was selected; the file dialog was closed without selecting a file.
-		UE_LOG(LogTemp, Log, TEXT("Dialog was closed. No files selected"));
+		UE_LOG(GaeaSubsystem, Log, TEXT("Dialog was closed. No files selected"));
 			return;
 		
 	}
@@ -702,7 +709,7 @@ void UGaeaSubsystem::ImportHeightmap(FString& Heightmap, FString& JSON, FVector&
 	
 		if(bStatus)
 		{
-			UE_LOG(LogTemp, Display, TEXT("ScaleX: %f, ScaleY: %f, Height: %f, Resolution: %d"), 
+			UE_LOG(GaeaSubsystem, Display, TEXT("ScaleX: %f, ScaleY: %f, Height: %f, Resolution: %d"), 
 		   GaeaDefinition.ScaleX, GaeaDefinition.ScaleY, GaeaDefinition.Height, GaeaDefinition.Resolution);
 			Location = FVector(0,0,GaeaDefinition.Height*100/2);
 			Scale = FVector(GaeaDefinition.ScaleX * 100 / GaeaDefinition.Resolution,GaeaDefinition.ScaleY * 100 / GaeaDefinition.Resolution,GaeaDefinition.Height * 100 / 512); // Apply scaling formula to our passed in scale variable from the ImporterPanelSettings
@@ -719,7 +726,7 @@ FString UGaeaSubsystem::ReadStringFromFile(FString Path, bool& bOutSuccess, FStr
 		bOutSuccess = false;
 		OutMessage = FString::Printf(TEXT("Failed to read file - File does not exist - '%s'"), *Path);\
 	
-		UE_LOG(LogTemp, Error, TEXT("Failed to read file - File does not exist."));
+		UE_LOG(GaeaSubsystem, Error, TEXT("Failed to read file - File does not exist."));
 		return "";
 	}
 
@@ -729,7 +736,7 @@ FString UGaeaSubsystem::ReadStringFromFile(FString Path, bool& bOutSuccess, FStr
 	{
 		bOutSuccess = false;
 		OutMessage = FString::Printf(TEXT("Failed to read file - Is this a text file? - '%s'"), *Path);
-		UE_LOG(LogTemp, Error, TEXT("Failed to read file - Is this a text file?"));
+		UE_LOG(GaeaSubsystem, Error, TEXT("Failed to read file - Is this a text file?"));
 		return "";
 	}
 
@@ -754,13 +761,13 @@ TSharedPtr<FJsonObject> UGaeaSubsystem::ReadJson(FString Path, bool& bOutSuccess
 	{
 		bOutSuccess = false;
 		OutMessage = FString::Printf(TEXT("Json read failed - '%s'"), *Path);
-		UE_LOG(LogTemp, Error, TEXT("Json read failed."));
+		UE_LOG(GaeaSubsystem, Error, TEXT("Json read failed."));
 		return nullptr;
 	}
 
 	bOutSuccess = true;
 	OutMessage = FString::Printf(TEXT("Successfully read Json - '%s'"), *Path);
-	UE_LOG(LogTemp, Log, TEXT("Successfully read Json."));
+	UE_LOG(GaeaSubsystem, Log, TEXT("Successfully read Json."));
 	return RetJsonObject;
 }
 
@@ -778,7 +785,7 @@ FGaeaJson UGaeaSubsystem::CreateStructFromJson(FString Path, bool& bOutSuccess, 
 	{
 		bOutSuccess = false;
 		OutMessage = FString::Printf(TEXT("Json conversion failed - '%s'"), *Path);
-		UE_LOG(LogTemp, Error, TEXT("Json conversion failed."));
+		UE_LOG(GaeaSubsystem, Error, TEXT("Json conversion failed."));
 		return FGaeaJson();
 	}
 
@@ -869,8 +876,8 @@ void UGaeaSubsystem::CreateLandscapeActor(UImporterPanelSettings* Settings)
 		PathExists = UEditorAssetLibrary::DoesDirectoryExist(PackagePath);
 	}
 
-	UE_LOG(LogTemp, Display, TEXT("LandscapeMaterialLayerNames Count: %d"), Settings->LandscapeMaterialLayerNames.Num());
-	UE_LOG(LogTemp, Display, TEXT("LayerInfoFolder Path: %s"), *Settings->LayerInfoFolder.Path);
+	UE_LOG(GaeaSubsystem, Display, TEXT("LandscapeMaterialLayerNames Count: %d"), Settings->LandscapeMaterialLayerNames.Num());
+	UE_LOG(GaeaSubsystem, Display, TEXT("LayerInfoFolder Path: %s"), *Settings->LayerInfoFolder.Path);
 
 	if (!Settings->LandscapeMaterialLayerNames.IsEmpty() && PathExists && Settings->LandscapeMaterialLayerNames.Num() >= 2 && Settings->WeightmapFileNames.Num() == (Settings->LandscapeMaterialLayerNames.Num() - 1))
 	{
@@ -931,7 +938,7 @@ void UGaeaSubsystem::CreateLandscapeActor(UImporterPanelSettings* Settings)
 			for(int i = 0; i < Settings->WeightmapFileNames.Num(); i++) 
 			{
 				FString FullPath = FPaths::Combine(*Settings->StoredPath, *Settings->WeightmapFileNames[i]);
-				UE_LOG(LogTemp, Warning, TEXT("Weightmap Full Path: %s"), *FullPath);
+				UE_LOG(GaeaSubsystem, Display, TEXT("Weightmap Full Path: %s"), *FullPath);
 				Settings->WeightmapFilePaths.Add(FullPath); 
 			}
 		}
@@ -957,7 +964,7 @@ void UGaeaSubsystem::CreateLandscapeActor(UImporterPanelSettings* Settings)
 			}
 		}
 
-		UE_LOG(LogTemp, Warning, TEXT("MaterialImportLayers Length: %d"), MaterialImportLayers.Num());
+		UE_LOG(GaeaSubsystem, Display, TEXT("MaterialImportLayers Length: %d"), MaterialImportLayers.Num());
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1094,6 +1101,18 @@ TArray<FName> UGaeaSubsystem::GetLandscapeLayerBlendNames(TArray<UMaterialExpres
 		Names = OutNames;
 		return OutNames;
 	
+}
+
+void UGaeaSubsystem::GetLandscapeActorProxies(ALandscape* Landscape,TArray<ALandscapeProxy*>& LandscapeStreamingProxies)
+{
+	if (Landscape)
+	{
+		Landscape->GetLandscapeInfo()->ForEachLandscapeProxy([&LandscapeStreamingProxies](ALandscapeProxy* Proxy)
+		{
+			LandscapeStreamingProxies.Add(Proxy);
+			return true; 
+		});
+	}
 }
 
 

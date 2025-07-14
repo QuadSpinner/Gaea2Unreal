@@ -4,6 +4,11 @@
 #include "GWindow.h"
 #include "GaeaSubsystem.h"
 #include "WorldPartition/WorldPartitionSubsystem.h"
+#include "PropertyEditorModule.h"
+#include "Widgets/Input/SButton.h"
+#include "Widgets/Layout/SScrollBox.h"
+
+DEFINE_LOG_CATEGORY(GaeaWindow)
 
 SMCWindow::SMCWindow()
 {
@@ -110,9 +115,9 @@ FReply SGaeaImportWindow::OnImportClicked() const
 	{
 		check(ImporterSettings != nullptr); // check if Importer Settings is valid
 		Manager->ImportHeightmap(ImporterSettings->HeightMapFileName, ImporterSettings->jsonFileName, ImporterSettings->Scale, ImporterSettings->Location, ImporterSettings->WeightmapFileNames, ImporterSettings->StoredPath); // Set heightmap path, json path and scale
-		UE_LOG(LogTemp, Display, TEXT("Heightmap file path is: %s"), *ImporterSettings->HeightMapFileName); // Log the heightmap file path
-		UE_LOG(LogTemp, Display, TEXT("Json file path is: %s"), *ImporterSettings->jsonFileName); // Log the heightmap file path
-		UE_LOG(LogTemp, Display, TEXT("Scale value is: %s"), *ImporterSettings->Scale.ToString()); // Log the scale
+		UE_LOG(GaeaWindow, Display, TEXT("Heightmap file path is: %s"), *ImporterSettings->HeightMapFileName); // Log the heightmap file path
+		UE_LOG(GaeaWindow, Display, TEXT("Json file path is: %s"), *ImporterSettings->jsonFileName); // Log the heightmap file path
+		UE_LOG(GaeaWindow, Display, TEXT("Scale value is: %s"), *ImporterSettings->Scale.ToString()); // Log the scale
 		return FReply::Handled();
 	}
 	return FReply::Handled();

@@ -4,6 +4,7 @@
 #include "Math/MathFwd.h"
 #include "EditorSubsystem.h"
 #include "Modules/ModuleManager.h"
+#include "IDetailsView.h"
 #include "Input/Reply.h"
 #include "IDesktopPlatform.h"
 //#include "GaeaUEFunctionLibrary.h"
@@ -17,6 +18,8 @@
 /**
  * 
  */
+
+DECLARE_LOG_CATEGORY_EXTERN(GaeaSubsystem, Log, All);
 
 class FJsonObject;
 
@@ -92,6 +95,9 @@ public:
 
 	UFUNCTION()
 	TArray<FName> GetLandscapeLayerBlendNames(TArray<UMaterialExpressionLandscapeLayerBlend*> LayerBlends, TArray<FName>& Names);
+
+	UFUNCTION()
+	void GetLandscapeActorProxies(ALandscape* Landscape, TArray<ALandscapeProxy*>& LandscapeStreamingProxies);
 
 
 private:

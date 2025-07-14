@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Materials/MaterialInstance.h"
 #include "GMCSettings.generated.h"
 
 /**
