@@ -5,7 +5,7 @@
 #include "Modules/ModuleManager.h"
 #include "GaeaSubsystem.h"
 
-
+DECLARE_LOG_CATEGORY_EXTERN(GaeaUETools, Log, All);
 
 class FToolBarBuilder;
 class FMenuBuilder;
@@ -16,6 +16,7 @@ public:
     
     virtual void StartupModule() override;
     virtual void ShutdownModule() override;
+	
 
    // void RegisterMCWindow();
 
@@ -26,10 +27,13 @@ public:
 	void RegisterGaeaActorMenu();
 
 	// Entry for refreshing landscape from Gaea heightmap and json
-	void RefreshGaeaLandscape(FMenuBuilder& MenuBuilder);
+	void GaeaActorActions(FMenuBuilder& MenuBuilder);
+
+	void RegisterLandscapeActorMenu();
+	
     
 private:
-    
+	
 };
 
 

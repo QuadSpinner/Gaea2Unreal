@@ -5,11 +5,13 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "GaeaUEToolsEditor/Public/GMCSettings.h"
+#include "GMCSettings.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeGMCSettings() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FDirectoryPath();
 ENGINE_API UClass* Z_Construct_UClass_UMaterialFunction_NoRegister();
@@ -19,9 +21,9 @@ GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UGMCSettings_NoRegister();
 GAEAUETOOLSEDITOR_API UEnum* Z_Construct_UEnum_GaeaUEToolsEditor_ELandscapeBlendLayersType();
 GAEAUETOOLSEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FGaeaLandscapeSetting();
 UPackage* Z_Construct_UPackage__Script_GaeaUEToolsEditor();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Enum ELandscapeBlendLayersType
+// ********** Begin Enum ELandscapeBlendLayersType *************************************************
 static FEnumRegistrationInfo Z_Registration_Info_UEnum_ELandscapeBlendLayersType;
 static UEnum* ELandscapeBlendLayersType_StaticEnum()
 {
@@ -76,21 +78,17 @@ UEnum* Z_Construct_UEnum_GaeaUEToolsEditor_ELandscapeBlendLayersType()
 	}
 	return Z_Registration_Info_UEnum_ELandscapeBlendLayersType.InnerSingleton;
 }
-// End Enum ELandscapeBlendLayersType
+// ********** End Enum ELandscapeBlendLayersType ***************************************************
 
-// Begin ScriptStruct FGaeaLandscapeSetting
-static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting;
+// ********** Begin ScriptStruct FGaeaLandscapeSetting *********************************************
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting;
 class UScriptStruct* FGaeaLandscapeSetting::StaticStruct()
 {
-	if (!Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting.OuterSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting.OuterSingleton)
 	{
-		Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FGaeaLandscapeSetting, (UObject*)Z_Construct_UPackage__Script_GaeaUEToolsEditor(), TEXT("GaeaLandscapeSetting"));
+		Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FGaeaLandscapeSetting, (UObject*)Z_Construct_UPackage__Script_GaeaUEToolsEditor(), TEXT("GaeaLandscapeSetting"));
 	}
-	return Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting.OuterSingleton;
-}
-template<> GAEAUETOOLSEDITOR_API UScriptStruct* StaticStruct<FGaeaLandscapeSetting>()
-{
-	return FGaeaLandscapeSetting::StaticStruct();
+	return Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting.OuterSingleton;
 }
 struct Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics
 {
@@ -173,22 +171,46 @@ const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FGaeaLandscapeS
 };
 UScriptStruct* Z_Construct_UScriptStruct_FGaeaLandscapeSetting()
 {
-	if (!Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting.InnerSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting.InnerSingleton)
 	{
-		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting.InnerSingleton, Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::StructParams);
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting.InnerSingleton, Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::StructParams);
 	}
-	return Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting.InnerSingleton;
+	return Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting.InnerSingleton;
 }
-// End ScriptStruct FGaeaLandscapeSetting
+// ********** End ScriptStruct FGaeaLandscapeSetting ***********************************************
 
-// Begin Class UGMCSettings
+// ********** Begin Class UGMCSettings *************************************************************
 void UGMCSettings::StaticRegisterNativesUGMCSettings()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UGMCSettings);
+FClassRegistrationInfo Z_Registration_Info_UClass_UGMCSettings;
+UClass* UGMCSettings::GetPrivateStaticClass()
+{
+	using TClass = UGMCSettings;
+	if (!Z_Registration_Info_UClass_UGMCSettings.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			StaticPackage(),
+			TEXT("GMCSettings"),
+			Z_Registration_Info_UClass_UGMCSettings.InnerSingleton,
+			StaticRegisterNativesUGMCSettings,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UGMCSettings.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UGMCSettings_NoRegister()
 {
-	return UGMCSettings::StaticClass();
+	return UGMCSettings::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UGMCSettings_Statics
 {
@@ -223,8 +245,8 @@ struct Z_Construct_UClass_UGMCSettings_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings_Inner = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGaeaLandscapeSetting, METADATA_PARAMS(0, nullptr) }; // 2831246157
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, LandscapeLayerSettings), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeLayerSettings_MetaData), NewProp_LandscapeLayerSettings_MetaData) }; // 2831246157
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings_Inner = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGaeaLandscapeSetting, METADATA_PARAMS(0, nullptr) }; // 2448113848
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeLayerSettings = { "LandscapeLayerSettings", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, LandscapeLayerSettings), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeLayerSettings_MetaData), NewProp_LandscapeLayerSettings_MetaData) }; // 2448113848
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_ContentBrowserPath = { "ContentBrowserPath", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, ContentBrowserPath), Z_Construct_UScriptStruct_FDirectoryPath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ContentBrowserPath_MetaData), NewProp_ContentBrowserPath_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UGMCSettings_Statics::NewProp_LandscapeMaterialName = { "LandscapeMaterialName", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGMCSettings, LandscapeMaterialName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LandscapeMaterialName_MetaData), NewProp_LandscapeMaterialName_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGMCSettings_Statics::PropPointers[] = {
@@ -262,29 +284,26 @@ UClass* Z_Construct_UClass_UGMCSettings()
 	}
 	return Z_Registration_Info_UClass_UGMCSettings.OuterSingleton;
 }
-template<> GAEAUETOOLSEDITOR_API UClass* StaticClass<UGMCSettings>()
-{
-	return UGMCSettings::StaticClass();
-}
 DEFINE_VTABLE_PTR_HELPER_CTOR(UGMCSettings);
-// End Class UGMCSettings
+// ********** End Class UGMCSettings ***************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ ELandscapeBlendLayersType_StaticEnum, TEXT("ELandscapeBlendLayersType"), &Z_Registration_Info_UEnum_ELandscapeBlendLayersType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 114690888U) },
 	};
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FGaeaLandscapeSetting::StaticStruct, Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewStructOps, TEXT("GaeaLandscapeSetting"), &Z_Registration_Info_UScriptStruct_GaeaLandscapeSetting, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaLandscapeSetting), 2831246157U) },
+		{ FGaeaLandscapeSetting::StaticStruct, Z_Construct_UScriptStruct_FGaeaLandscapeSetting_Statics::NewStructOps, TEXT("GaeaLandscapeSetting"), &Z_Registration_Info_UScriptStruct_FGaeaLandscapeSetting, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaLandscapeSetting), 2448113848U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UGMCSettings, UGMCSettings::StaticClass, TEXT("UGMCSettings"), &Z_Registration_Info_UClass_UGMCSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGMCSettings), 1765185091U) },
+		{ Z_Construct_UClass_UGMCSettings, UGMCSettings::StaticClass, TEXT("UGMCSettings"), &Z_Registration_Info_UClass_UGMCSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGMCSettings), 3924316588U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_2871232640(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::ScriptStructInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h_Statics::EnumInfo));
-// End Registration
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_1934525778(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GMCSettings_h__Script_GaeaUEToolsEditor_Statics::EnumInfo));
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

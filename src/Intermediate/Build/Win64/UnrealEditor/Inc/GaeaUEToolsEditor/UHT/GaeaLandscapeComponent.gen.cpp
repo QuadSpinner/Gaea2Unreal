@@ -5,26 +5,52 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "GaeaUEToolsEditor/Public/GaeaLandscapeComponent.h"
+#include "GaeaLandscapeComponent.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeGaeaLandscapeComponent() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FFilePath();
 ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UGaeaLandscapeComponent();
 GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UGaeaLandscapeComponent_NoRegister();
 UPackage* Z_Construct_UPackage__Script_GaeaUEToolsEditor();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UGaeaLandscapeComponent
+// ********** Begin Class UGaeaLandscapeComponent **************************************************
 void UGaeaLandscapeComponent::StaticRegisterNativesUGaeaLandscapeComponent()
 {
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UGaeaLandscapeComponent);
+FClassRegistrationInfo Z_Registration_Info_UClass_UGaeaLandscapeComponent;
+UClass* UGaeaLandscapeComponent::GetPrivateStaticClass()
+{
+	using TClass = UGaeaLandscapeComponent;
+	if (!Z_Registration_Info_UClass_UGaeaLandscapeComponent.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			StaticPackage(),
+			TEXT("GaeaLandscapeComponent"),
+			Z_Registration_Info_UClass_UGaeaLandscapeComponent.InnerSingleton,
+			StaticRegisterNativesUGaeaLandscapeComponent,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UGaeaLandscapeComponent.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UGaeaLandscapeComponent_NoRegister()
 {
-	return UGaeaLandscapeComponent::StaticClass();
+	return UGaeaLandscapeComponent::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UGaeaLandscapeComponent_Statics
 {
@@ -117,24 +143,21 @@ UClass* Z_Construct_UClass_UGaeaLandscapeComponent()
 	}
 	return Z_Registration_Info_UClass_UGaeaLandscapeComponent.OuterSingleton;
 }
-template<> GAEAUETOOLSEDITOR_API UClass* StaticClass<UGaeaLandscapeComponent>()
-{
-	return UGaeaLandscapeComponent::StaticClass();
-}
 DEFINE_VTABLE_PTR_HELPER_CTOR(UGaeaLandscapeComponent);
 UGaeaLandscapeComponent::~UGaeaLandscapeComponent() {}
-// End Class UGaeaLandscapeComponent
+// ********** End Class UGaeaLandscapeComponent ****************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h__Script_GaeaUEToolsEditor_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UGaeaLandscapeComponent, UGaeaLandscapeComponent::StaticClass, TEXT("UGaeaLandscapeComponent"), &Z_Registration_Info_UClass_UGaeaLandscapeComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaeaLandscapeComponent), 946101618U) },
+		{ Z_Construct_UClass_UGaeaLandscapeComponent, UGaeaLandscapeComponent::StaticClass, TEXT("UGaeaLandscapeComponent"), &Z_Registration_Info_UClass_UGaeaLandscapeComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaeaLandscapeComponent), 4161030608U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h_2020774984(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h__Script_GaeaUEToolsEditor_257913880(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h__Script_GaeaUEToolsEditor_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaLandscapeComponent_h__Script_GaeaUEToolsEditor_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

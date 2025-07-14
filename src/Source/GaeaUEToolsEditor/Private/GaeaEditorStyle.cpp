@@ -4,7 +4,9 @@
 #include "Interfaces/IPluginManager.h"
 #include "Styling/CoreStyle.h"
 #include "Styling/SlateStyleRegistry.h"
- 
+
+DEFINE_LOG_CATEGORY(GaeaEditorStyle)
+
 TUniquePtr<FSlateStyleSet> FGaeaEditorStyle::StyleSet;
  
 void FGaeaEditorStyle::Initialize()
@@ -34,7 +36,7 @@ void FGaeaEditorStyle::Initialize()
 	{
 		// Plugin found, construct the resources path
 		const FString ResourcesPath = FPaths::Combine(PluginPath, TEXT("Resources"));
-		UE_LOG(LogTemp, Warning, TEXT("Resources Directory is: %s"), *ResourcesPath);
+		UE_LOG(GaeaEditorStyle, Display, TEXT("Resources Directory is: %s"), *ResourcesPath);
 
 		// Construct the relative path to the image file
 		const FString IconPath = ResourcesPath + "/ImporterIcon.png";
@@ -43,8 +45,8 @@ void FGaeaEditorStyle::Initialize()
 	else
 	{
 		// Plugin not found
-		UE_LOG(LogTemp, Error, TEXT("GaeaUnrealTools icon path not found. This is likely caused by the plugin being installed in an incorrect location or folder name. Please see https://gaea.app/uedocs for exact instructions for the file path."));
-	}	
+		UE_LOG(GaeaEditorStyle, Warning, TEXT("GaeaUnrealTools plugin not found"));
+	}
 	
  
 	// Register the style set

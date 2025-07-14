@@ -5,11 +5,13 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "GaeaUEToolsEditor/Public/GaeaSubsystem.h"
+#include "GaeaSubsystem.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodeGaeaSubsystem() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 EDITORSUBSYSTEM_API UClass* Z_Construct_UClass_UEditorSubsystem();
 ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
@@ -18,24 +20,21 @@ GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UGaeaSubsystem_NoRegister();
 GAEAUETOOLSEDITOR_API UClass* Z_Construct_UClass_UImporterPanelSettings_NoRegister();
 GAEAUETOOLSEDITOR_API UScriptStruct* Z_Construct_UScriptStruct_FGaeaJson();
 LANDSCAPE_API UClass* Z_Construct_UClass_ALandscape_NoRegister();
+LANDSCAPE_API UClass* Z_Construct_UClass_ALandscapeProxy_NoRegister();
 LANDSCAPE_API UClass* Z_Construct_UClass_ULandscapeInfo_NoRegister();
 LANDSCAPE_API UClass* Z_Construct_UClass_UMaterialExpressionLandscapeLayerBlend_NoRegister();
 UPackage* Z_Construct_UPackage__Script_GaeaUEToolsEditor();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin ScriptStruct FGaeaJson
-static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_GaeaJson;
+// ********** Begin ScriptStruct FGaeaJson *********************************************************
+static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_FGaeaJson;
 class UScriptStruct* FGaeaJson::StaticStruct()
 {
-	if (!Z_Registration_Info_UScriptStruct_GaeaJson.OuterSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FGaeaJson.OuterSingleton)
 	{
-		Z_Registration_Info_UScriptStruct_GaeaJson.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FGaeaJson, (UObject*)Z_Construct_UPackage__Script_GaeaUEToolsEditor(), TEXT("GaeaJson"));
+		Z_Registration_Info_UScriptStruct_FGaeaJson.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FGaeaJson, (UObject*)Z_Construct_UPackage__Script_GaeaUEToolsEditor(), TEXT("GaeaJson"));
 	}
-	return Z_Registration_Info_UScriptStruct_GaeaJson.OuterSingleton;
-}
-template<> GAEAUETOOLSEDITOR_API UScriptStruct* StaticStruct<FGaeaJson>()
-{
-	return FGaeaJson::StaticStruct();
+	return Z_Registration_Info_UScriptStruct_FGaeaJson.OuterSingleton;
 }
 struct Z_Construct_UScriptStruct_FGaeaJson_Statics
 {
@@ -111,15 +110,15 @@ const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FGaeaJson_Stati
 };
 UScriptStruct* Z_Construct_UScriptStruct_FGaeaJson()
 {
-	if (!Z_Registration_Info_UScriptStruct_GaeaJson.InnerSingleton)
+	if (!Z_Registration_Info_UScriptStruct_FGaeaJson.InnerSingleton)
 	{
-		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_GaeaJson.InnerSingleton, Z_Construct_UScriptStruct_FGaeaJson_Statics::StructParams);
+		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_FGaeaJson.InnerSingleton, Z_Construct_UScriptStruct_FGaeaJson_Statics::StructParams);
 	}
-	return Z_Registration_Info_UScriptStruct_GaeaJson.InnerSingleton;
+	return Z_Registration_Info_UScriptStruct_FGaeaJson.InnerSingleton;
 }
-// End ScriptStruct FGaeaJson
+// ********** End ScriptStruct FGaeaJson ***********************************************************
 
-// Begin Class UGaeaSubsystem Function CreateLandscapeActor
+// ********** Begin Class UGaeaSubsystem Function CreateLandscapeActor *****************************
 struct Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics
 {
 	struct GaeaSubsystem_eventCreateLandscapeActor_Parms
@@ -142,7 +141,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::NewProp_Settings,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "CreateLandscapeActor", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::GaeaSubsystem_eventCreateLandscapeActor_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "CreateLandscapeActor", Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::GaeaSubsystem_eventCreateLandscapeActor_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor_Statics::GaeaSubsystem_eventCreateLandscapeActor_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor()
 {
@@ -161,9 +160,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execCreateLandscapeActor)
 	P_THIS->CreateLandscapeActor(Z_Param_Settings);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function CreateLandscapeActor
+// ********** End Class UGaeaSubsystem Function CreateLandscapeActor *******************************
 
-// Begin Class UGaeaSubsystem Function CreateStructFromJson
+// ********** Begin Class UGaeaSubsystem Function CreateStructFromJson *****************************
 struct Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics
 {
 	struct GaeaSubsystem_eventCreateStructFromJson_Parms
@@ -193,7 +192,7 @@ void Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_bOutSuccess = { "bOutSuccess", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(GaeaSubsystem_eventCreateStructFromJson_Parms), &Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_bOutSuccess_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_OutMessage = { "OutMessage", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GaeaSubsystem_eventCreateStructFromJson_Parms, OutMessage), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GaeaSubsystem_eventCreateStructFromJson_Parms, ReturnValue), Z_Construct_UScriptStruct_FGaeaJson, METADATA_PARAMS(0, nullptr) }; // 568454402
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GaeaSubsystem_eventCreateStructFromJson_Parms, ReturnValue), Z_Construct_UScriptStruct_FGaeaJson, METADATA_PARAMS(0, nullptr) }; // 586650515
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_Path,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_bOutSuccess,
@@ -201,7 +200,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "CreateStructFromJson", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::GaeaSubsystem_eventCreateStructFromJson_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "CreateStructFromJson", Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::GaeaSubsystem_eventCreateStructFromJson_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson_Statics::GaeaSubsystem_eventCreateStructFromJson_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson()
 {
@@ -222,9 +221,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execCreateStructFromJson)
 	*(FGaeaJson*)Z_Param__Result=P_THIS->CreateStructFromJson(Z_Param_Path,Z_Param_Out_bOutSuccess,Z_Param_Out_OutMessage);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function CreateStructFromJson
+// ********** End Class UGaeaSubsystem Function CreateStructFromJson *******************************
 
-// Begin Class UGaeaSubsystem Function GetGaeaSubsystem
+// ********** Begin Class UGaeaSubsystem Function GetGaeaSubsystem *********************************
 struct Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics
 {
 	struct GaeaSubsystem_eventGetGaeaSubsystem_Parms
@@ -247,7 +246,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetGaeaSubsystem", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::GaeaSubsystem_eventGetGaeaSubsystem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetGaeaSubsystem", Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::GaeaSubsystem_eventGetGaeaSubsystem_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00022401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem_Statics::GaeaSubsystem_eventGetGaeaSubsystem_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem()
 {
@@ -265,9 +264,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execGetGaeaSubsystem)
 	*(UGaeaSubsystem**)Z_Param__Result=UGaeaSubsystem::GetGaeaSubsystem();
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function GetGaeaSubsystem
+// ********** End Class UGaeaSubsystem Function GetGaeaSubsystem ***********************************
 
-// Begin Class UGaeaSubsystem Function GetLandscape
+// ********** Begin Class UGaeaSubsystem Function GetLandscape *************************************
 struct Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics
 {
 	struct GaeaSubsystem_eventGetLandscape_Parms
@@ -292,7 +291,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscape", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::GaeaSubsystem_eventGetLandscape_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscape", Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::GaeaSubsystem_eventGetLandscape_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscape_Statics::GaeaSubsystem_eventGetLandscape_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_GetLandscape()
 {
@@ -311,9 +310,59 @@ DEFINE_FUNCTION(UGaeaSubsystem::execGetLandscape)
 	*(ALandscape**)Z_Param__Result=P_THIS->GetLandscape(Z_Param_LandscapeInfo);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function GetLandscape
+// ********** End Class UGaeaSubsystem Function GetLandscape ***************************************
 
-// Begin Class UGaeaSubsystem Function GetLandscapeLayerBlendNames
+// ********** Begin Class UGaeaSubsystem Function GetLandscapeActorProxies *************************
+struct Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics
+{
+	struct GaeaSubsystem_eventGetLandscapeActorProxies_Parms
+	{
+		ALandscape* Landscape;
+		TArray<ALandscapeProxy*> LandscapeStreamingProxies;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/GaeaSubsystem.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Landscape;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_LandscapeStreamingProxies_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_LandscapeStreamingProxies;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::NewProp_Landscape = { "Landscape", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GaeaSubsystem_eventGetLandscapeActorProxies_Parms, Landscape), Z_Construct_UClass_ALandscape_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::NewProp_LandscapeStreamingProxies_Inner = { "LandscapeStreamingProxies", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ALandscapeProxy_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::NewProp_LandscapeStreamingProxies = { "LandscapeStreamingProxies", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(GaeaSubsystem_eventGetLandscapeActorProxies_Parms, LandscapeStreamingProxies), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::NewProp_Landscape,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::NewProp_LandscapeStreamingProxies_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::NewProp_LandscapeStreamingProxies,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscapeActorProxies", Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::GaeaSubsystem_eventGetLandscapeActorProxies_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::GaeaSubsystem_eventGetLandscapeActorProxies_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UGaeaSubsystem::execGetLandscapeActorProxies)
+{
+	P_GET_OBJECT(ALandscape,Z_Param_Landscape);
+	P_GET_TARRAY_REF(ALandscapeProxy*,Z_Param_Out_LandscapeStreamingProxies);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->GetLandscapeActorProxies(Z_Param_Landscape,Z_Param_Out_LandscapeStreamingProxies);
+	P_NATIVE_END;
+}
+// ********** End Class UGaeaSubsystem Function GetLandscapeActorProxies ***************************
+
+// ********** Begin Class UGaeaSubsystem Function GetLandscapeLayerBlendNames **********************
 struct Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics
 {
 	struct GaeaSubsystem_eventGetLandscapeLayerBlendNames_Parms
@@ -351,7 +400,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscapeLayerBlendNames", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::GaeaSubsystem_eventGetLandscapeLayerBlendNames_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscapeLayerBlendNames", Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::GaeaSubsystem_eventGetLandscapeLayerBlendNames_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames_Statics::GaeaSubsystem_eventGetLandscapeLayerBlendNames_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames()
 {
@@ -371,9 +420,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execGetLandscapeLayerBlendNames)
 	*(TArray<FName>*)Z_Param__Result=P_THIS->GetLandscapeLayerBlendNames(Z_Param_LayerBlends,Z_Param_Out_Names);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function GetLandscapeLayerBlendNames
+// ********** End Class UGaeaSubsystem Function GetLandscapeLayerBlendNames ************************
 
-// Begin Class UGaeaSubsystem Function GetLandscapeLayerBlendNodes
+// ********** Begin Class UGaeaSubsystem Function GetLandscapeLayerBlendNodes **********************
 struct Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics
 {
 	struct GaeaSubsystem_eventGetLandscapeLayerBlendNodes_Parms
@@ -401,7 +450,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscapeLayerBlendNodes", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::GaeaSubsystem_eventGetLandscapeLayerBlendNodes_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "GetLandscapeLayerBlendNodes", Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::GaeaSubsystem_eventGetLandscapeLayerBlendNodes_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes_Statics::GaeaSubsystem_eventGetLandscapeLayerBlendNodes_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes()
 {
@@ -420,9 +469,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execGetLandscapeLayerBlendNodes)
 	*(TArray<UMaterialExpressionLandscapeLayerBlend*>*)Z_Param__Result=P_THIS->GetLandscapeLayerBlendNodes(Z_Param_MaterialInterface);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function GetLandscapeLayerBlendNodes
+// ********** End Class UGaeaSubsystem Function GetLandscapeLayerBlendNodes ************************
 
-// Begin Class UGaeaSubsystem Function ImportHeightmap
+// ********** Begin Class UGaeaSubsystem Function ImportHeightmap **********************************
 struct Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics
 {
 	struct GaeaSubsystem_eventImportHeightmap_Parms
@@ -468,7 +517,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::NewProp_CachedPath,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ImportHeightmap", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::GaeaSubsystem_eventImportHeightmap_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C20401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ImportHeightmap", Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::GaeaSubsystem_eventImportHeightmap_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C20401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap_Statics::GaeaSubsystem_eventImportHeightmap_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap()
 {
@@ -492,9 +541,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execImportHeightmap)
 	P_THIS->ImportHeightmap(Z_Param_Out_Heightmap,Z_Param_Out_JSON,Z_Param_Out_Scale,Z_Param_Out_Location,Z_Param_Out_Weightmaps,Z_Param_Out_CachedPath);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function ImportHeightmap
+// ********** End Class UGaeaSubsystem Function ImportHeightmap ************************************
 
-// Begin Class UGaeaSubsystem Function ReadStringFromFile
+// ********** Begin Class UGaeaSubsystem Function ReadStringFromFile *******************************
 struct Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics
 {
 	struct GaeaSubsystem_eventReadStringFromFile_Parms
@@ -532,7 +581,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UGaeaS
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ReadStringFromFile", nullptr, nullptr, Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::GaeaSubsystem_eventReadStringFromFile_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ReadStringFromFile", Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::PropPointers), sizeof(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::GaeaSubsystem_eventReadStringFromFile_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile_Statics::GaeaSubsystem_eventReadStringFromFile_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile()
 {
@@ -553,9 +602,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execReadStringFromFile)
 	*(FString*)Z_Param__Result=P_THIS->ReadStringFromFile(Z_Param_Path,Z_Param_Out_bOutSuccess,Z_Param_Out_OutMessage);
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function ReadStringFromFile
+// ********** End Class UGaeaSubsystem Function ReadStringFromFile *********************************
 
-// Begin Class UGaeaSubsystem Function ReimportGaeaTerrain
+// ********** Begin Class UGaeaSubsystem Function ReimportGaeaTerrain ******************************
 struct Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics
 {
 #if WITH_METADATA
@@ -565,7 +614,7 @@ struct Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ReimportGaeaTerrain", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ReimportGaeaTerrain", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -582,9 +631,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execReimportGaeaTerrain)
 	P_THIS->ReimportGaeaTerrain();
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function ReimportGaeaTerrain
+// ********** End Class UGaeaSubsystem Function ReimportGaeaTerrain ********************************
 
-// Begin Class UGaeaSubsystem Function ReimportGaeaWPTerrain
+// ********** Begin Class UGaeaSubsystem Function ReimportGaeaWPTerrain ****************************
 struct Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics
 {
 #if WITH_METADATA
@@ -594,7 +643,7 @@ struct Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ReimportGaeaWPTerrain", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "ReimportGaeaWPTerrain", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -611,9 +660,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execReimportGaeaWPTerrain)
 	P_THIS->ReimportGaeaWPTerrain();
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function ReimportGaeaWPTerrain
+// ********** End Class UGaeaSubsystem Function ReimportGaeaWPTerrain ******************************
 
-// Begin Class UGaeaSubsystem Function SpawnGImporterWindow
+// ********** Begin Class UGaeaSubsystem Function SpawnGImporterWindow *****************************
 struct Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics
 {
 #if WITH_METADATA
@@ -625,7 +674,7 @@ struct Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "SpawnGImporterWindow", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UGaeaSubsystem, nullptr, "SpawnGImporterWindow", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics::Function_MetaDataParams), Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -642,9 +691,9 @@ DEFINE_FUNCTION(UGaeaSubsystem::execSpawnGImporterWindow)
 	P_THIS->SpawnGImporterWindow();
 	P_NATIVE_END;
 }
-// End Class UGaeaSubsystem Function SpawnGImporterWindow
+// ********** End Class UGaeaSubsystem Function SpawnGImporterWindow *******************************
 
-// Begin Class UGaeaSubsystem
+// ********** Begin Class UGaeaSubsystem ***********************************************************
 void UGaeaSubsystem::StaticRegisterNativesUGaeaSubsystem()
 {
 	UClass* Class = UGaeaSubsystem::StaticClass();
@@ -653,6 +702,7 @@ void UGaeaSubsystem::StaticRegisterNativesUGaeaSubsystem()
 		{ "CreateStructFromJson", &UGaeaSubsystem::execCreateStructFromJson },
 		{ "GetGaeaSubsystem", &UGaeaSubsystem::execGetGaeaSubsystem },
 		{ "GetLandscape", &UGaeaSubsystem::execGetLandscape },
+		{ "GetLandscapeActorProxies", &UGaeaSubsystem::execGetLandscapeActorProxies },
 		{ "GetLandscapeLayerBlendNames", &UGaeaSubsystem::execGetLandscapeLayerBlendNames },
 		{ "GetLandscapeLayerBlendNodes", &UGaeaSubsystem::execGetLandscapeLayerBlendNodes },
 		{ "ImportHeightmap", &UGaeaSubsystem::execImportHeightmap },
@@ -663,10 +713,34 @@ void UGaeaSubsystem::StaticRegisterNativesUGaeaSubsystem()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UGaeaSubsystem);
+FClassRegistrationInfo Z_Registration_Info_UClass_UGaeaSubsystem;
+UClass* UGaeaSubsystem::GetPrivateStaticClass()
+{
+	using TClass = UGaeaSubsystem;
+	if (!Z_Registration_Info_UClass_UGaeaSubsystem.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			StaticPackage(),
+			TEXT("GaeaSubsystem"),
+			Z_Registration_Info_UClass_UGaeaSubsystem.InnerSingleton,
+			StaticRegisterNativesUGaeaSubsystem,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UGaeaSubsystem.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UGaeaSubsystem_NoRegister()
 {
-	return UGaeaSubsystem::StaticClass();
+	return UGaeaSubsystem::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UGaeaSubsystem_Statics
 {
@@ -690,17 +764,18 @@ struct Z_Construct_UClass_UGaeaSubsystem_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor, "CreateLandscapeActor" }, // 750424786
-		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson, "CreateStructFromJson" }, // 1613792579
-		{ &Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem, "GetGaeaSubsystem" }, // 128476306
-		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscape, "GetLandscape" }, // 4283000196
-		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames, "GetLandscapeLayerBlendNames" }, // 3254978093
-		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes, "GetLandscapeLayerBlendNodes" }, // 687975465
-		{ &Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap, "ImportHeightmap" }, // 1734609087
-		{ &Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile, "ReadStringFromFile" }, // 2953167482
-		{ &Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain, "ReimportGaeaTerrain" }, // 2614075156
-		{ &Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain, "ReimportGaeaWPTerrain" }, // 3701868786
-		{ &Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow, "SpawnGImporterWindow" }, // 2719854119
+		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateLandscapeActor, "CreateLandscapeActor" }, // 126047164
+		{ &Z_Construct_UFunction_UGaeaSubsystem_CreateStructFromJson, "CreateStructFromJson" }, // 490026605
+		{ &Z_Construct_UFunction_UGaeaSubsystem_GetGaeaSubsystem, "GetGaeaSubsystem" }, // 2188458190
+		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscape, "GetLandscape" }, // 3811358538
+		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeActorProxies, "GetLandscapeActorProxies" }, // 184675934
+		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNames, "GetLandscapeLayerBlendNames" }, // 4183170873
+		{ &Z_Construct_UFunction_UGaeaSubsystem_GetLandscapeLayerBlendNodes, "GetLandscapeLayerBlendNodes" }, // 2137930294
+		{ &Z_Construct_UFunction_UGaeaSubsystem_ImportHeightmap, "ImportHeightmap" }, // 1676635086
+		{ &Z_Construct_UFunction_UGaeaSubsystem_ReadStringFromFile, "ReadStringFromFile" }, // 1207228057
+		{ &Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaTerrain, "ReimportGaeaTerrain" }, // 2924816092
+		{ &Z_Construct_UFunction_UGaeaSubsystem_ReimportGaeaWPTerrain, "ReimportGaeaWPTerrain" }, // 1158654563
+		{ &Z_Construct_UFunction_UGaeaSubsystem_SpawnGImporterWindow, "SpawnGImporterWindow" }, // 732022179
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -743,28 +818,25 @@ UClass* Z_Construct_UClass_UGaeaSubsystem()
 	}
 	return Z_Registration_Info_UClass_UGaeaSubsystem.OuterSingleton;
 }
-template<> GAEAUETOOLSEDITOR_API UClass* StaticClass<UGaeaSubsystem>()
-{
-	return UGaeaSubsystem::StaticClass();
-}
 UGaeaSubsystem::UGaeaSubsystem() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(UGaeaSubsystem);
 UGaeaSubsystem::~UGaeaSubsystem() {}
-// End Class UGaeaSubsystem
+// ********** End Class UGaeaSubsystem *************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h__Script_GaeaUEToolsEditor_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FGaeaJson::StaticStruct, Z_Construct_UScriptStruct_FGaeaJson_Statics::NewStructOps, TEXT("GaeaJson"), &Z_Registration_Info_UScriptStruct_GaeaJson, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaJson), 568454402U) },
+		{ FGaeaJson::StaticStruct, Z_Construct_UScriptStruct_FGaeaJson_Statics::NewStructOps, TEXT("GaeaJson"), &Z_Registration_Info_UScriptStruct_FGaeaJson, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaeaJson), 586650515U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UGaeaSubsystem, UGaeaSubsystem::StaticClass, TEXT("UGaeaSubsystem"), &Z_Registration_Info_UClass_UGaeaSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaeaSubsystem), 3708554181U) },
+		{ Z_Construct_UClass_UGaeaSubsystem, UGaeaSubsystem::StaticClass, TEXT("UGaeaSubsystem"), &Z_Registration_Info_UClass_UGaeaSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaeaSubsystem), 2716678208U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_4216918434(TEXT("/Script/GaeaUEToolsEditor"),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h_Statics::ScriptStructInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h__Script_GaeaUEToolsEditor_1759059922(TEXT("/Script/GaeaUEToolsEditor"),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h__Script_GaeaUEToolsEditor_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h__Script_GaeaUEToolsEditor_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h__Script_GaeaUEToolsEditor_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_G56_GaeaUnrealTools_HostProject_Plugins_GaeaUnrealTools_Source_GaeaUEToolsEditor_Public_GaeaSubsystem_h__Script_GaeaUEToolsEditor_Statics::ScriptStructInfo),
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -2,7 +2,9 @@
 
 #pragma once
 #include "Styling/SlateStyle.h"
- 
+
+DECLARE_LOG_CATEGORY_EXTERN(GaeaEditorStyle, Log, All);
+
 class FGaeaEditorStyle final
 {
 public:
