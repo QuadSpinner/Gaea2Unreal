@@ -36,6 +36,7 @@
 #include "LandscapeInfo.h"
 #include "Editor.h"
 #include "LandscapeEditLayer.h"
+#include "LandscapeEdit.h"
 
 
 #include "Materials/MaterialExpressionLandscapeLayerBlend.h"
@@ -160,7 +161,7 @@ void UGaeaSubsystem::ReimportGaeaTerrain()
 		{
 			AActor* Actor = SelectedActors[0];
 			ALandscape* Landscape = Cast<ALandscape>(Actor);
-			bool EditLayers = Landscape->bCanHaveLayersContent; // Create bool from bCanHaveLayersContent. This is used for determining which terrain refresh method we use later.
+			bool EditLayers = Landscape->HasLayersContent(); // Create bool from bCanHaveLayersContent. This is used for determining which terrain refresh method we use later.
 
 			ULandscapeInfo* LandscapeActorInfo = Landscape->GetLandscapeInfo();
 
@@ -486,7 +487,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 
 									if (ProxyHeightData.Num() == CompSizeX * CompSizeY)
 									{
-										if (Landscape->bCanHaveLayersContent)
+										if (Landscape->HasLayersContent())
 										{
 											ULandscapeEditLayerBase* Layer = Landscape->GetEditLayer(0);
 											LandscapeEdit.SetEditLayer(Layer->GetGuid()); 
@@ -540,7 +541,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 									}
 									
                                 	
-									if(Landscape->bCanHaveLayersContent && InfoObjects.Num() > 0)
+									if(Landscape->HasLayersContent() && InfoObjects.Num() > 0)
 									{
 										TArray<uint8> FirstLayerData;
 										FirstLayerData.SetNum(CompSizeX * CompSizeY);
@@ -579,7 +580,7 @@ void UGaeaSubsystem::ReimportGaeaWPTerrain()
 
 												if (ProxyWeightData.Num() == CompSizeX * CompSizeY)
 												{
-													if (Landscape->bCanHaveLayersContent)
+													if (Landscape->HasLayersContent())
 													{
 														ULandscapeEditLayerBase* Layer = Landscape->GetEditLayer(0);
 														LandscapeEdit.SetEditLayer(Layer->GetGuid()); 
@@ -973,7 +974,7 @@ void UGaeaSubsystem::CreateLandscapeActor(UImporterPanelSettings* Settings)
 	const FVector Offset = FTransform(Settings->Rotation,FVector::ZeroVector, Settings->Scale).TransformVector(FVector(-OutComponentCount.X * QuadsPerComponent / 2., -OutComponentCount.Y * QuadsPerComponent / 2., 0.));
 	
 	ALandscape* Landscape = World->SpawnActor<ALandscape>(Settings->Location + Offset, Settings->Rotation);
-	Landscape->bCanHaveLayersContent = Settings->EnableEditLayers;
+	// Landscape->bCanHaveLayersContent = Settings->EnableEditLayers; // Obsolete as the import/layer setup already determines it
 	Landscape->LandscapeMaterial = Settings->LandscapeMaterial;
 	Landscape->SetActorRelativeScale3D(Settings->Scale);
 
