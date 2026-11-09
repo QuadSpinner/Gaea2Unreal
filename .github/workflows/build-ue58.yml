@@ -1,0 +1,44 @@
+name: Build Gaea2Unreal for UE 5.8
+
+on:
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: [self-hosted, windows, ue-5.8]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Unreal Engine installation
+        shell: pwsh
+        run: |
+          if (-not $env:UE_5_8_ROOT) {
+            throw 'Set UE_5_8_ROOT on the self-hosted runner to the Unreal Engine 5.8 installation path.'
+          }
+
+          $uat = Join-Path $env:UE_5_8_ROOT 'Engine\Build\BatchFiles\RunUAT.bat'
+          if (-not (Test-Path -LiteralPath $uat)) {
+            throw "RunUAT.bat was not found under UE_5_8_ROOT: $env:UE_5_8_ROOT"
+          }
+
+      - name: Build Win64 plugin package
+        shell: pwsh
+        run: |
+          $uat = Join-Path $env:UE_5_8_ROOT 'Engine\Build\BatchFiles\RunUAT.bat'
+          & $uat BuildPlugin `
+            -Plugin="$env:GITHUB_WORKSPACE\src\GaeaUnrealTools.uplugin" `
+            -Package="$env:GITHUB_WORKSPACE\Packaged-Win64" `
+            -TargetPlatforms=Win64 `
+            -Rocket
+
+          if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+          }
+
+      - name: Upload packaged plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: Gaea2Unreal-UE-5.8-Win64
+          path: Packaged-Win64
+          if-no-files-found: error
